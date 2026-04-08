@@ -6,7 +6,7 @@ import { BookOpen, CheckSquare, FileText, Bell } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
 export default function StudentDashboard() {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setUser(data.user));
@@ -26,28 +26,28 @@ export default function StudentDashboard() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-        <StatCard 
-          title="Attendance Rate" 
-          value="95%" 
-          icon={CheckSquare} 
+        <StatCard
+          title="Attendance Rate"
+          value="95%"
+          icon={CheckSquare}
           color="emerald"
         />
-        <StatCard 
-          title="Current Grade" 
-          value="A-" 
-          icon={BookOpen} 
+        <StatCard
+          title="Current Grade"
+          value="A-"
+          icon={BookOpen}
           color="blue"
         />
-        <StatCard 
-          title="Missing Assignments" 
-          value={0} 
-          icon={FileText} 
+        <StatCard
+          title="Missing Assignments"
+          value={0}
+          icon={FileText}
           color="amber"
         />
-        <StatCard 
-          title="School Notices" 
-          value={recentNotices.length} 
-          icon={Bell} 
+        <StatCard
+          title="School Notices"
+          value={recentNotices.length}
+          icon={Bell}
           color="indigo"
         />
       </div>
