@@ -7,7 +7,7 @@ interface StatCardProps {
   icon: LucideIcon;
   trend?: string;
   trendUp?: boolean;
-  color?: 'blue' | 'green' | 'amber' | 'red';
+  color?: 'blue' | 'green' | 'amber' | 'red' | 'indigo' | 'emerald';
 }
 
 const colorClasses = {
@@ -15,6 +15,8 @@ const colorClasses = {
   green: 'bg-emerald-50 text-emerald-600',
   amber: 'bg-amber-50 text-amber-600',
   red: 'bg-rose-50 text-rose-600',
+  indigo: 'bg-indigo-50 text-indigo-600',
+  emerald: 'bg-emerald-50 text-emerald-600',
 };
 
 export default function StatCard({ 
