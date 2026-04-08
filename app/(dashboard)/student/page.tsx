@@ -6,7 +6,7 @@ import { BookOpen, CheckSquare, FileText, Bell } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
 export default function StudentDashboard() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setUser(data.user));
