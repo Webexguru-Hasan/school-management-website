@@ -1,12 +1,16 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import StatCard from '@/components/StatCard';
 import { BookOpen, CheckSquare, FileText, Bell } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
-export const revalidate = 0;
+export default function StudentDashboard() {
+  const [user, setUser] = useState<any>(null);
 
-export default async function StudentDashboard() {
-  const { data: { user } } = await supabase.auth.getUser();
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => setUser(data.user));
+  }, []);
 
   // Mocked for MVP demonstration
   const recentNotices = [

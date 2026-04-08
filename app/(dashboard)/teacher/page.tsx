@@ -1,13 +1,17 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import StatCard from '@/components/StatCard';
 import { Users, CheckSquare, FileText, Bell } from 'lucide-react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 
-export const revalidate = 0;
+export default function TeacherDashboard() {
+  const [user, setUser] = useState<any>(null);
 
-export default async function TeacherDashboard() {
-  const { data: { user } } = await supabase.auth.getUser();
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => setUser(data.user));
+  }, []);
   
   // We mock the assigned classes count for now.
   const assignedClassesCount = 4;
