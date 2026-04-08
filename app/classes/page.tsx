@@ -71,12 +71,20 @@ export default function ClassesPage() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
+      // Create payload matching schema (no room_number)
+      const payload = {
+        name: formData.name,
+        section: formData.section,
+        capacity: formData.capacity,
+        academic_year: formData.academic_year
+      };
+
       if (editingId) {
-        const { error } = await supabase.from('classes').update(formData).eq('id', editingId);
+        const { error } = await supabase.from('classes').update(payload).eq('id', editingId);
         if (error) throw error;
         toast.success('Class updated successfully');
       } else {
-        const { error } = await supabase.from('classes').insert([formData]);
+        const { error } = await supabase.from('classes').insert([payload]);
         if (error) throw error;
         toast.success('New class created successfully');
       }
