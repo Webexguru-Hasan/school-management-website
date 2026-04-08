@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Sora } from "next/font/google";
 import { Toaster } from "react-hot-toast";
-import Sidebar from "@/components/Sidebar";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -31,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} ${sora.variable} font-sans antialiased`}
       >
-        <Sidebar>{children}</Sidebar>
+        {children}
         <Toaster position="top-right" toastOptions={{
           style: {
             borderRadius: '12px',

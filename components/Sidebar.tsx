@@ -19,44 +19,44 @@ import {
 } from 'lucide-react';
 
 const navItems = [
-  { name: 'Dashboard', href: '/', icon: LayoutDashboard },
+  { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
   {
     name: 'Academic',
     items: [
-      { name: 'Students', href: '/students', icon: Users },
-      { name: 'Admission', href: '/admission', icon: UserPlus },
-      { name: 'Attendance', href: '/attendance', icon: CheckSquare },
-      { name: 'Classes', href: '/classes', icon: BookOpen },
+      { name: 'Students', href: '/admin/students', icon: Users },
+      { name: 'Admission', href: '/admin/admission', icon: UserPlus },
+      { name: 'Attendance', href: '/admin/attendance', icon: CheckSquare },
+      { name: 'Classes', href: '/admin/classes', icon: BookOpen },
     ],
   },
   {
     name: 'Staff',
     items: [
-      { name: 'Teachers', href: '/teachers', icon: GraduationCap },
+      { name: 'Teachers', href: '/admin/teachers', icon: GraduationCap },
     ],
   },
   {
     name: 'Finance',
     items: [
-      { name: 'Fee Management', href: '/fees', icon: CreditCard },
+      { name: 'Fee Management', href: '/admin/fees', icon: CreditCard },
     ],
   },
   {
     name: 'Academics',
     items: [
-      { name: 'Results', href: '/results', icon: FileText },
+      { name: 'Results', href: '/admin/results', icon: FileText },
     ],
   },
   {
     name: 'Communication',
     items: [
-      { name: 'Notices', href: '/notices', icon: Bell },
+      { name: 'Notices', href: '/admin/notices', icon: Bell },
     ],
   },
   {
     name: 'Analytics',
     items: [
-      { name: 'Reports', href: '/reports', icon: BarChart },
+      { name: 'Reports', href: '/admin/reports', icon: BarChart },
     ],
   },
 ];
@@ -80,7 +80,7 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
         className={`fixed inset-y-0 left-0 z-30 w-64 bg-white border-r border-slate-200 transform transition-transform duration-300 lg:translate-x-0 lg:static lg:inset-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex items-center justify-between h-16 px-6 border-b border-slate-200">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/admin" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
               <BookOpen className="w-5 h-5 text-white" />
             </div>
